@@ -1,23 +1,88 @@
-# Image-Classification-and-Analysis-Using-Deep-Learning-Methods
-This project built an image classifier using ResNet-50 (PyTorch) to categorize Amazon products into three classes. While achieving 91.67% training accuracy, test performance dropped to 41.67%, suggesting overfitting. Evaluation revealed poor results on Digital_Music. Solutions include more data and model optimization.
+# 🖼️ Amazon Ürün Görsel Sınıflandırma (ResNet-50)
 
-This project developed a PyTorch-based image classifier using ResNet-50 to categorize Amazon product images into three classes: All_Beauty, Digital_Music, and Health_and_Personal_Care. Key findings:
+## 📌 Proje Özeti
+Bu proje, **ResNet-50 (PyTorch)** kullanarak Amazon ürün görsellerini üç sınıfa ayırmayı amaçlamaktadır:
 
-Performance:
-Training accuracy: 91.67%
-Test accuracy: 41.67% (indicating overfitting)
-Digital_Music classification failed completely
-Technical Approach:
-Transfer learning with ResNet-50
-Standard image preprocessing (resizing, augmentation)
-CrossEntropy loss with Adam optimizer
-Identified Issues:
-Significant overfitting
-Poor generalization on test set
-Complete failure on Digital_Music category
-Recommended Improvements:
-Dataset expansion
-Enhanced augmentation techniques
-Model architecture adjustments
-Class imbalance mitigation
-The project demonstrates the challenges of applying transfer learning to limited datasets while highlighting the importance of proper model evaluation and validation techniques.
+- **All_Beauty (Kozmetik & Güzellik)**
+- **Digital_Music (Dijital Müzik)**
+- **Health_and_Personal_Care (Sağlık & Kişisel Bakım)**
+
+Çalışma, **transfer öğrenmenin güçlü yönlerini ve sınırlamalarını** özellikle küçük ve dengesiz veri kümeleri üzerinde göstermektedir.
+
+---
+
+## 🚀 Teknik Yaklaşım
+- **Model Mimarisi:** ResNet-50 ile Transfer Learning (ImageNet üzerinde önceden eğitilmiş)  
+- **Veri Ön İşleme:**  
+  - Görsellerin yeniden boyutlandırılması  
+  - Veri artırma (döndürme, çevirme, normalizasyon)  
+- **Eğitim Detayları:**  
+  - Kayıp Fonksiyonu: CrossEntropy  
+  - Optimizasyon: Adam  
+  - Öğrenme oranı planlaması  
+- **Değerlendirme Metrikleri:** Doğruluk (Accuracy) ve sınıf bazlı performans analizi  
+
+---
+
+## 📊 Sonuçlar
+- **Eğitim Doğruluğu:** `91.67%`  
+- **Test Doğruluğu:** `41.67%`  
+- **Önemli Gözlem:**  
+  - Eğitim setinde yüksek başarı → **Aşırı uyum (Overfitting) tespit edildi**  
+  - **Digital_Music** sınıfında sınıflandırma tamamen başarısız oldu  
+
+| Sınıf                      | Performans |
+|-----------------------------|-------------|
+| All_Beauty                 | İyi         |
+| Health_and_Personal_Care   | Orta        |
+| Digital_Music              | Zayıf (başarısız) |
+
+---
+
+## ⚠️ Belirlenen Sorunlar
+- Belirgin **aşırı uyum (overfitting)** (yüksek eğitim doğruluğu, düşük test doğruluğu)  
+- **Genelleme başarısızlığı** (yeni verilerde düşük performans)  
+- **Sınıf dengesizliği** problemi  
+- **Digital_Music** kategorisinde tamamen başarısız sınıflandırma  
+
+---
+
+## 💡 Önerilen İyileştirmeler
+- **Veri Kümesini Genişletme**: Daha dengeli eğitim örnekleri toplamak  
+- **Gelişmiş Veri Artırma**: Daha güçlü düzenlileştirme teknikleri uygulamak  
+- **Model Optimizasyonu**: ResNet-101, EfficientNet veya Vision Transformers denemek  
+- **Sınıf Dengesizliği Çözümü**: Oversampling, undersampling veya ağırlıklı kayıp fonksiyonu kullanmak  
+- **Çapraz Doğrulama**: Daha iyi model doğrulama stratejileri geliştirmek  
+
+---
+
+## 📚 Temel Çıkarımlar
+Bu proje göstermektedir ki:  
+- **Transfer öğrenme**, sınırlı veri kümelerinde zorluklar barındırır  
+- **Veri kalitesi ve dengesi**, başarı için kritik öneme sahiptir  
+- Sadece **doğruluk (accuracy)** yerine **sınıf bazlı değerlendirme** de önemlidir  
+
+---
+
+## 🛠️ Kullanılan Teknolojiler
+- **Python 3.x**
+- **PyTorch**
+- **Torchvision**
+- **Matplotlib / Seaborn** (görselleştirme için)
+- **NumPy, Pandas** (veri işleme için)
+
+---
+
+## 📌 Gelecek Çalışmalar
+- **Daha büyük mimariler** (ResNet-101, EfficientNet) veya **Vision Transformers (ViT)** denemek  
+- **Yarı denetimli / kendi kendine öğrenme yöntemleri** uygulamak  
+- **Hiperparametre optimizasyonu** (Optuna gibi araçlarla)  
+- Modeli **Flask/FastAPI + Docker** ile dağıtmak  
+
+---
+
+## 👤 FURKAN DEMİR 
+Geliştiren: **[FURKAN DEMİR ]**  
+
+
+
